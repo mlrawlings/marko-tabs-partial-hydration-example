@@ -1,30 +1,32 @@
 <app-layout title="Welcome to Marko">
-  <mouse-mask.container>
-    <header>
-      <img.logo src="./logo.svg" alt="Marko"/>
-    </header>
-    <main>
-      <p>Edit <code>./pages/index.marko</code> and save to reload.</p>
-      <a href="https://markojs.com/docs/getting-started">
-        Learn Marko
-      </a>
-    </main>
-  </mouse-mask>
+  <h1>These are tabs</h1>
+  <p>only the &lt;tabs&gt; component itself is hydrated (not the contents)</p> 
+  <tabs selected="first">
+    <@tab id="first">
+      <@head>
+        First
+      </@head>
+      <@body>
+        <p>This is the first tab. Nothing to see here.</p>
+      </@body>
+    </@tab>
+    <@tab id="second">
+      <@head>
+        Second
+      </@head>
+      <@body>
+        <p>This is the second tab. It has a counter: <counter/>.</p>
+        <p>This counter gets hydrated independently of the tabs component.  Notice also that its state is preserved as you switch between tabs.</p>
+      </@body>
+    </@tab>
+    <@tab id="third">
+      <@head>
+        Third 
+      </@head>
+      <@body>
+        <p>This is the third tab. It also has a child component, but the child does not get hydrated.  Here's some <strong>lorem ipsum</strong>.</p>
+        <lorem/>
+      </@body>
+    </@tab>
+  </tabs>
 </app-layout>
-
-style {
-  .container {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size:2em; 
-    color: #fff;
-    background: #111;
-    height:100%;
-    width:100%;
-  }
-  img.logo {
-    width:400px;
-  }
-}

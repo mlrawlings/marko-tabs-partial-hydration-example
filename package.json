@@ -3,6 +3,7 @@
   "description": "The default Marko starter app",
   "version": "1.0.0",
   "dependencies": {
+    "@marko/tags-api-preview": "^0.5.3",
     "marko": "^5"
   },
   "devDependencies": {

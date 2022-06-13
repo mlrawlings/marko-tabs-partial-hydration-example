@@ -1,0 +1,8 @@
+{
+  "@selected": "string",
+  "@tabs <tab>[]": {
+      "@id": "string",
+      "@head <head>": {},
+      "@body <body>": {}
+  }
+}

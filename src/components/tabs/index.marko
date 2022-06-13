@@ -1,0 +1,36 @@
+<attrs/{ tabs, selected: defaultSelected }/>
+
+<let/selected=defaultSelected/>
+
+<div.tabs-container>
+  <div.tabs-head>
+    <for|{ id, head }| of=tabs>
+      <button.tab class={ selected: selected === id } onClick() { selected = id }>
+        <${head.renderBody}/>
+      </button>
+    </for>
+  </div>
+  <div.tabs-body>
+    <for|{ id, body }| of=tabs>
+      <div.tab-content class={ selected: selected === id }>
+        <${body.renderBody}/>
+      </div>
+    </for>
+  </div>
+</div>
+
+<style>
+  .tab {
+    color: #666;
+  }
+  .tab.selected {
+    font-weight:bold;
+    color: #000;
+  }
+  .tab-content {
+    display: none;
+  }
+  .tab-content.selected {
+    display:block;
+  }
+</style>
